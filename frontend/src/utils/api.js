@@ -67,11 +67,10 @@ class Api {
     }).then(this._getServerAnswer);
   }
 }
-
-export const api = new Api({
-  url: "https://mesto.nomoreparties.co/v1/cohort-58",
-  headers: {
-    authorization: "29541fd3-27c0-44ae-80c6-8cdfe8b1ee09",
-    "Content-Type": "application/json",
-  },
-});
+  export const api = new Api({
+    url: 'https://api.mariatektova.students.nomoredomains.rocks',
+    headers: {
+      'Content-Type': 'application/json',
+      authorization: `Bearer ${localStorage.getItem('jwt')}`,
+    },
+  });
