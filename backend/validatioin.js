@@ -24,34 +24,34 @@ const signupValidation = {
       'string.password': 'Пароль должен быть не менее 8 символов',
       'any.required': 'Пароль не должен быть пустым',
     }),
-    name: Joi.string().min(2).max(30).messages({
+    name: Joi.string().min(2).max(30).required.messages({
       'string.min': 'Поле "имя" не должно быть меньше 2 символов',
       'string.max': 'Поле "имя" не должно быть больше 30 символов',
       'any.required': 'Поле "имя" не должно быть пустым',
     }),
-    about: Joi.string().min(2).max(30).messages({
+    about: Joi.string().min(2).max(30).required.messages({
       'string.min': 'Поле "род деятельности" не должно быть меньше 2 символов',
       'string.max': 'Поле "род деятельности" не должно быть больше 30 символов',
       'any.required': 'Поле "род деятельности" не должно быть пустым',
     }),
-    avatar: Joi.string().regex(urlRegEx).message('Невалидная ссылка'),
+    avatar: Joi.string().regex(urlRegEx).required.message('Невалидная ссылка'),
   }),
 };
 
 const getUserByIdValidation = {
   params: Joi.object({
-    userId: Joi.string().hex().length(24).message('Некорректный id'),
+    userId: Joi.string().hex().length(24).required.message('Некорректный id'),
   }),
 };
 
 const editProfileValidation = {
   body: Joi.object({
-    name: Joi.string().min(2).max(30).messages({
+    name: Joi.string().min(2).max(30).required.messages({
       'string.min': 'Поле "имя" не должно быть меньше 2 символов',
       'string.max': 'Поле "имя" не должно быть больше 30 символов',
       'any.required': 'Поле "имя" не должно быть пустым',
     }),
-    about: Joi.string().min(2).max(30).messages({
+    about: Joi.string().min(2).max(30).required.messages({
       'string.min': 'Поле "род деятельности" не должно быть меньше 2 символов',
       'string.max': 'Поле "род деятельности" не должно быть больше 30 символов',
       'any.required': 'Поле "род деятельности" не должно быть пустым',
@@ -61,7 +61,7 @@ const editProfileValidation = {
 
 const updateAvatarValidation = {
   body: Joi.object({
-    avatar: Joi.string().regex(urlRegEx).message('Невалидная ссылка'),
+    avatar: Joi.string().regex(urlRegEx).required.message('Невалидная ссылка'),
   }),
 };
 
@@ -88,7 +88,7 @@ const createCardValidation = {
 
 const deleteCardValidation = {
   params: Joi.object({
-    cardId: Joi.string().hex().length(24).messages({
+    cardId: Joi.string().hex().length(24).required.messages({
       'string.hex': 'Некорректный id',
     }),
   }),
@@ -96,7 +96,7 @@ const deleteCardValidation = {
 
 const likeCardValidation = {
   params: Joi.object({
-    cardId: Joi.string().hex().length(24).messages({
+    cardId: Joi.string().hex().length(24).required.messages({
       'string.hex': 'Некорректный id',
     }),
   }),

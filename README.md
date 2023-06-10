@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.47.254
+IP-адрес 158.160.60.93
 
 Frontend https://mariatektova.students.nomoredomains.rocks
 
