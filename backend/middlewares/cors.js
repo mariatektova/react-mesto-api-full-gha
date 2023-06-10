@@ -1,5 +1,10 @@
-const { allowedCors } = require('../utils/constants').default;
-
+const allowedCors = [
+  'https://mariatektova.students.nomoredomains.rocks',
+  'https://api.mariatektova.students.nomoredomains.rocks',
+  'http://mariatektova.students.nomoredomains.rocks',
+  'http://api.mariatektova.students.nomoredomains.rocks',
+  'localhost:3000',
+];
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 
 module.exports = (req, res, next) => {
