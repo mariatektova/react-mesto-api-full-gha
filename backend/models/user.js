@@ -10,6 +10,7 @@ const userSchema = new mongoose.Schema({
     required: true,
     minLength: 2,
     maxLength: 30,
+    default: 'Жак-Ив Кусто',
   },
 
   about: {
@@ -17,6 +18,7 @@ const userSchema = new mongoose.Schema({
     required: true,
     minLength: 2,
     maxLength: 30,
+    default: 'Исследователь',
   },
 
   avatar: {
@@ -26,6 +28,7 @@ const userSchema = new mongoose.Schema({
       validator: (v) => urlRegEx.test(v),
       message: 'Формат ссылки неправильный',
     },
+    default: 'https://pictures.s3.yandex.net/resources/jacques-cousteau_1604399756.png',
   },
 
   email: {

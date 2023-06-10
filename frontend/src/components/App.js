@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 
 import Header from "./Header";
 import Main from "./Main";
@@ -48,6 +48,7 @@ function App() {
         })
         .catch((err) => console.log(err));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -138,7 +139,7 @@ function App() {
     api
       .deleteCards(card._id)
       .then(() => {
-        setCards((state) => state.filter((item) => item._id != card._id));
+        setCards((state) => state.filter((item) => item._id !== card._id));
         closePopups();
       })
       .catch((err) => {
