@@ -2,8 +2,8 @@ const JWT_SECRET = 'some-secret-key';
 const urlRegEx = /^(ftp|http|https):\/\/[^ "]+$/;
 
 const allowedCors = [
-  'http://mariatektova.nomoredomains.monster',
-  'https://mariatektova.nomoredomains.monster',
+  'https://mariatektova.students.nomoredomains.rocks',
+  'https://api.mariatektova.students.nomoredomains.rocks',
   'localhost:3000',
 ];
 
