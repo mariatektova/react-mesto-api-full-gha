@@ -1,5 +1,5 @@
 const { Joi } = require('celebrate');
-const { urlRegEx } = require('./utils/constants');
+const { urlRegEx } = require('./utils/constants').default;
 
 const signinValidation = {
   body: Joi.object().keys({
@@ -24,12 +24,12 @@ const signupValidation = {
       'string.password': 'Пароль должен быть не менее 8 символов',
       'any.required': 'Пароль не должен быть пустым',
     }),
-    name: Joi.string().min(2).max(30).required.messages({
+    name: Joi.string().min(2).max(30).messages({
       'string.min': 'Поле "имя" не должно быть меньше 2 символов',
       'string.max': 'Поле "имя" не должно быть больше 30 символов',
       'any.required': 'Поле "имя" не должно быть пустым',
     }),
-    about: Joi.string().min(2).max(30).required.messages({
+    about: Joi.string().min(2).max(30).messages({
       'string.min': 'Поле "род деятельности" не должно быть меньше 2 символов',
       'string.max': 'Поле "род деятельности" не должно быть больше 30 символов',
       'any.required': 'Поле "род деятельности" не должно быть пустым',

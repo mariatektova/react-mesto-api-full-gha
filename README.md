@@ -11,6 +11,6 @@
 
 IP-адрес 158.160.60.93
 
-Frontend https://mariatektova.students.nomoredomains.rocks
+Frontend https://mariatektova.students.nomoredomains.rocks/sign-in
 
-Backend https://api.mariatektova.students.nomoredomains.rocks
+Backend http://api.mariatektova.students.nomoredomains.rocks

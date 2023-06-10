@@ -1,4 +1,4 @@
-const { allowedCors } = require('../utils/constants');
+const { allowedCors } = require('../utils/constants').default;
 
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 
