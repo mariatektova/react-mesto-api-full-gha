@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const isEmail = require('validator/lib/isEmail');
-const { urlRegEx } = require('../utils/constants').default;
+const { urlRegEx } = require('../utils/constants');
 
 const userSchema = new mongoose.Schema({
 
