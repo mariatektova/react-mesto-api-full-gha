@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://api.mariatektova.students.nomoredomains.rocks';
+export const BASE_URL = 'http://api.mariatektova.students.nomoredomains.rocks';
 const checkResponse = (res) => {
   if (res.ok) {
     return res.json();

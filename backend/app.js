@@ -17,15 +17,16 @@ mongoose.connect('mongodb://localhost:27017/mestodb');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('*', (req, res, next) => {
-  next(new NotFound('Такой страницы не существует'));
-});
-
 app.use(requestLogger);
 app.use(cors);
 app.use(authRouter);
 app.use(auth);
 app.use(router);
+
+app.use('*', (req, res, next) => {
+  next(new NotFound('Такой страницы не существует'));
+});
+
 app.use(errorLogger);
 app.use(errors());
 
