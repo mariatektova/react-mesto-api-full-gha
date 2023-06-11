@@ -40,18 +40,18 @@ const signupValidation = {
 
 const getUserByIdValidation = {
   params: Joi.object({
-    userId: Joi.string().hex().length(24).message('Некорректный id'),
+    userId: Joi.string().required().hex().length(24).message('Некорректный id'),
   }),
 };
 
 const editProfileValidation = {
   body: Joi.object({
-    name: Joi.string().min(2).max(30).messages({
+    name: Joi.string().required().min(2).max(30).messages({
       'string.min': 'Поле "имя" не должно быть меньше 2 символов',
       'string.max': 'Поле "имя" не должно быть больше 30 символов',
       'any.required': 'Поле "имя" не должно быть пустым',
     }),
-    about: Joi.string().min(2).max(30).messages({
+    about: Joi.string().required().min(2).max(30).messages({
       'string.min': 'Поле "род деятельности" не должно быть меньше 2 символов',
       'string.max': 'Поле "род деятельности" не должно быть больше 30 символов',
       'any.required': 'Поле "род деятельности" не должно быть пустым',
@@ -61,7 +61,7 @@ const editProfileValidation = {
 
 const updateAvatarValidation = {
   body: Joi.object({
-    avatar: Joi.string().regex(urlRegEx).message('Невалидная ссылка'),
+    avatar: Joi.string().required().regex(urlRegEx).message('Невалидная ссылка'),
   }),
 };
 
